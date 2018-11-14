@@ -8,7 +8,6 @@ using UnityEngine;
 
 public class CharControl : MonoBehaviour {
     public int actorNum = 0;
-    public GameObject toon;
     private char choice;
     // Use this for initialization
     void Start () {
@@ -71,16 +70,16 @@ public class CharControl : MonoBehaviour {
             //Move right increment x in positive
             if (Input.GetKeyDown(KeyCode.D))
             {
-                if (toon.transform.rotation.eulerAngles.y == 90)
+                if (transform.rotation.eulerAngles.y == 90)
                 {
                     Vector3 temp = new Vector3(8, 0, 0);
-                    toon.transform.position += temp;
+                    transform.position += temp;
                 }
                 else
                 {
                     Quaternion temp = new Quaternion(0, 0, 0, 0);
                     temp = Quaternion.Euler(0, 90, 0);
-                    toon.transform.rotation = temp;
+                    transform.rotation = temp;
 
                 }
             }
@@ -89,16 +88,16 @@ public class CharControl : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.A))
             {
 
-                if (toon.transform.rotation.eulerAngles.y == 270)
+                if (transform.rotation.eulerAngles.y == 270)
                 {
                     Vector3 temp = new Vector3(-8, 0, 0);
-                    toon.transform.position += temp;
+                    transform.position += temp;
                 }
                 else
                 {
                     Quaternion temp = new Quaternion(0, 270, 0, 0);
                     temp = Quaternion.Euler(0, 270, 0);
-                    toon.transform.rotation = temp;
+                    transform.rotation = temp;
                 }
             }
 
@@ -106,17 +105,17 @@ public class CharControl : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.W))
             {
 
-                if (toon.transform.rotation.eulerAngles.y == 0)
+                if (transform.rotation.eulerAngles.y == 0)
                 {
                     Vector3 temp = new Vector3(0, 0, 8);
-                    toon.transform.position += temp;
+                    transform.position += temp;
                 }
                 else
                 {
 
                     Quaternion newRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w); ;
                     newRotation = Quaternion.Euler(0, 0, 0); // this add a -90 degrees Y rotation
-                    toon.transform.rotation = newRotation;
+                    transform.rotation = newRotation;
 
                     //  Quaternion newRotation = Quaternion.AngleAxis(270, Vector3.up);
                     //transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, .05f);
@@ -128,17 +127,17 @@ public class CharControl : MonoBehaviour {
             //Move Backwards
             if (Input.GetKeyDown(KeyCode.S))
             {
-                if (toon.transform.rotation.eulerAngles.y == 180)
+                if (transform.rotation.eulerAngles.y == 180)
                 {
                     Vector3 temp = new Vector3(0, 0, -8);
-                    toon.transform.position += temp;
+                    transform.position += temp;
                 }
                 else
                 {
 
                     Quaternion newRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w); ;
                     newRotation = Quaternion.Euler(0, 180, 0); // this add a 90 degrees Y rotation
-                    toon.transform.rotation = newRotation;
+                    transform.rotation = newRotation;
 
                 }
             }
