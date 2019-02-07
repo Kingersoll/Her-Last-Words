@@ -7,7 +7,7 @@ using UnityEngine;
 
 
 public class CharControl : MonoBehaviour {
-    public int actorNum = 0;
+    public int actorNum = 1;
     private char choice;
     // Use this for initialization
     void Start () {
