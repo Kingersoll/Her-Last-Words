@@ -72,6 +72,10 @@ public class CharControl : MonoBehaviour {
             {
                 if (transform.rotation.eulerAngles.y == 90)
                 {
+                if (true)
+                {
+
+                }
                     Vector3 temp = new Vector3(8, 0, 0);
                     transform.position += temp;
                 }

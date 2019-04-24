@@ -8,7 +8,7 @@ public class TurnController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        totalActors = 1;
+        totalActors = 2;
 	}
 	
 	// Update is called once per frame
