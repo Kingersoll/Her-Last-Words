@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class CharControl : MonoBehaviour {
     public int actorNum = 1;
+    public LayerMask unwalkableMask;
+    public Vector3 playerPosition;
     private char choice;
     // Use this for initialization
     void Start () {
@@ -72,12 +74,19 @@ public class CharControl : MonoBehaviour {
             {
                 if (transform.rotation.eulerAngles.y == 90)
                 {
-                if (true)
-                {
+                
+                Vector3 temp = new Vector3(8, 0, 0);
+                Vector3 cast = transform.position += temp;
+                if (Physics.CheckSphere(cast, 4))
+                    {
+                    print("help me");
+                    temp = new Vector3(0, 0, 0);
+                    }
 
+                else
+                {
+                    
                 }
-                    Vector3 temp = new Vector3(8, 0, 0);
-                    transform.position += temp;
                 }
                 else
                 {
@@ -105,7 +114,7 @@ public class CharControl : MonoBehaviour {
                 }
             }
 
-            // Move forward
+            // Move Up
             if (Input.GetKeyDown(KeyCode.W))
             {
 
