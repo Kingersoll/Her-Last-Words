@@ -25,7 +25,7 @@ public class CharControl : MonoBehaviour {
    // {
         void Update()
         {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown&& TurnController.getCurActor()==actorNum)
         {
 
            
@@ -39,8 +39,11 @@ public class CharControl : MonoBehaviour {
                 action();
                 Debug.Log(TurnController.getCurActor());
                 Debug.Log("action performed");
+                print(actorNum);
                 TurnController.incrementActor();
+                print(actorNum);
                 TurnController.lastActor();
+                print(actorNum);
             }
 
         }

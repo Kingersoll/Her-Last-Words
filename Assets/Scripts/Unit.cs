@@ -1,17 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
-public class Unit : MonoBehaviour {
+public class Unit : MonoBehaviour
+{
+
 
     public Transform target;
     float speed = 20;
     Vector3[] path;
     int targetIndex;
+    public float actorNum;
 
-    void start()
+    void Start()
+    {
+
+    }
+
+    private void Update()
+    {
+        if (TurnController.getCurActor() == actorNum)
+        {
+            findPlayer();
+        }
+    }
+
+    public void findPlayer()
     {
         PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
@@ -19,45 +35,49 @@ public class Unit : MonoBehaviour {
         if (pathSuccessful)
         {
             path = newPath;
+            targetIndex = 0;
             StopCoroutine("FollowPath");
             StartCoroutine("FollowPath");
         }
     }
+
     IEnumerator FollowPath()
     {
         Vector3 currentWaypoint = path[0];
-
-        while(true)
+        while (true)
         {
             if (transform.position == currentWaypoint)
             {
-                targetIndex ++;
+                targetIndex++;
                 if (targetIndex >= path.Length)
                 {
                     yield break;
                 }
                 currentWaypoint = path[targetIndex];
             }
+
             transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
             yield return null;
+
         }
     }
+
     public void OnDrawGizmos()
     {
         if (path != null)
         {
-            for (int i = targetIndex; i < path.Length; i ++)
+            for (int i = targetIndex; i < path.Length; i++)
             {
-                Gizmos.color = Color.green;
-                OnDrawGizmos.DrawCube(path[i], Vector3.one);
+                Gizmos.color = Color.black;
+                Gizmos.DrawCube(path[i], Vector3.one);
 
-                if (i = targetIndex)
+                if (i == targetIndex)
                 {
-                    OnDrawGizmos.DrawLine(transdorm.position, path[i]);
+                    Gizmos.DrawLine(transform.position, path[i]);
                 }
                 else
                 {
-                    OnDrawGizmos.DrawLine(path[i - 1], path[i]);
+                    Gizmos.DrawLine(path[i - 1], path[i]);
                 }
             }
         }

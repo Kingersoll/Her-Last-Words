@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Grid : MonoBehaviour
 {
+
     public bool displayGridGizmos;
     public LayerMask unwalkableMask;
     public Vector2 gridWorldSize;
@@ -15,12 +16,18 @@ public class Grid : MonoBehaviour
 
     void Awake()
     {
-       // Gizmos.color = Color.white;
-        //Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
         nodeDiameter = nodeRadius * 2;
         gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
         gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
         CreateGrid();
+    }
+
+    public int MaxSize
+    {
+        get
+        {
+            return gridSizeX * gridSizeY;
+        }
     }
 
     void CreateGrid()
@@ -34,11 +41,9 @@ public class Grid : MonoBehaviour
             {
                 Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
                 bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
-               
                 grid[x, y] = new Node(walkable, worldPoint, x, y);
             }
         }
-        print(worldBottomLeft);
     }
 
     public List<Node> GetNeighbours(Node node)
@@ -49,19 +54,15 @@ public class Grid : MonoBehaviour
         {
             for (int y = -1; y <= 1; y++)
             {
-                //skips current node that the searcher is on
                 if (x == 0 && y == 0)
                     continue;
-                // checks only cardinal directions get rid of this if to check in all directions
-                if (x == 0 || y == 0)
-                {
-                    int checkX = node.gridX + x;
-                    int checkY = node.gridY + y;
 
-                    if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
-                    {
-                        neighbours.Add(grid[checkX, checkY]);
-                    }
+                int checkX = node.gridX + x;
+                int checkY = node.gridY + y;
+
+                if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
+                {
+                    neighbours.Add(grid[checkX, checkY]);
                 }
             }
         }
@@ -69,7 +70,7 @@ public class Grid : MonoBehaviour
         return neighbours;
     }
 
-    // gets node at given vector3
+
     public Node NodeFromWorldPoint(Vector3 worldPosition)
     {
         float percentX = (worldPosition.x + gridWorldSize.x / 2) / gridWorldSize.x;
@@ -82,23 +83,16 @@ public class Grid : MonoBehaviour
         return grid[x, y];
     }
 
-
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 1, gridWorldSize.y));
-
         if (grid != null && displayGridGizmos)
         {
             foreach (Node n in grid)
             {
-                Gizmos.color = (n.walkable) ? Color.white: Color.red;
+                Gizmos.color = (n.walkable) ? Color.white : Color.red;
                 Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
             }
-
         }
     }
-    /*
-   
-            */
 }
