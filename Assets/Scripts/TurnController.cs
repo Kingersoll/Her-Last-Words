@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TurnController : MonoBehaviour {
-    public static int currentActor = 0;
+    public static int currentActor = 2;
     public static int totalActors;
 
 	// Use this for initialization
 	void Start () {
-        totalActors = 1;
+        totalActors = 3;
 	}
 	
 	// Update is called once per frame
