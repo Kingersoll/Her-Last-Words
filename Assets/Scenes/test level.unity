@@ -5249,7 +5249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 428793267}
-  actorNum: 1
+  actorNum: 0
 --- !u!4 &214995678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4003647089986324, guid: f4878fe2f3ace604aa8eda996f2b2034,
@@ -9890,22 +9890,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4403400032383840, guid: 4a458dc5f6b3f9e4ca6f6b200f8040c4,
     type: 2}
   m_PrefabInternal: {fileID: 1268059879}
---- !u!114 &428793268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 428793266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d007643525ce1b24ca0878a0768dd2d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actorNum: 0
-  unwalkableMask:
-    serializedVersion: 2
-    m_Bits: 0
-  playerPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &429440308
 Prefab:
   m_ObjectHideFlags: 0
@@ -30931,7 +30915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 428793267}
-  actorNum: 2
+  actorNum: 0
 --- !u!4 &1408112232 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4003647089986324, guid: f4878fe2f3ace604aa8eda996f2b2034,

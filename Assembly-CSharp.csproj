@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{EA038E7E-3CC5-B629-DB13-D68D681135F5}</ProjectGuid>
+    <ProjectGuid>{2E9EBE86-CFA7-F662-50CA-87D3B77023B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -66,16 +66,16 @@
      <Compile Include="Assets\Scripts\TurnController.cs" />
      <Compile Include="Assets\Scripts\Unit.cs" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>C:/Users/colin/Desktop/Slime Escape/Slime Escape/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/colin/Desktop/Slime Escape/Slime Escape/Slime-Escape-/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/colin/Desktop/Slime Escape/Slime Escape/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/colin/Desktop/Slime Escape/Slime Escape/Slime-Escape-/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/colin/Desktop/Slime Escape/Slime Escape/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/Users/colin/Desktop/Slime Escape/Slime Escape/Slime-Escape-/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/colin/Desktop/Slime Escape/Slime Escape/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/colin/Desktop/Slime Escape/Slime Escape/Slime-Escape-/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.21f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
